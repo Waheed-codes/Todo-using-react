@@ -1,0 +1,11 @@
+import TitleCounter from "./components/TitleCounter.jsx";
+import TodoApp from "./components/TodoApp.jsx";
+
+export default function App() {
+  return (
+    <>
+      <TodoApp />
+      {/* <TitleCounter/> */}
+    </>
+  )
+}
