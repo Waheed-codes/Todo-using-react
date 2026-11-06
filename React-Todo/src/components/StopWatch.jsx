@@ -5,17 +5,22 @@ export default function StopWatch(){
     const[seconds,setSeconds]=useState(0);
     const [running,setRunning]=useState(false);
     useEffect(()=>{
-         const interval= (()=>setInterval)
-       
-
+        if(!running) return;
+         const interval= setInterval(()=> setSeconds((s)=> s+1),1000)
+         return ()=> clearInterval(interval)
 
     },[running])
+    function reset(){
+        setSeconds(0)
+        setRunning(false)
+    }
 
     return(
         <div>
-            <button>Start</button>
-            <button >Stop</button>
-            <button >Reset</button>
+            <span>{seconds}s</span>
+            <button onClick={()=>setRunning(true)}>Start</button>
+            <button onClick={()=>setRunning(false)}>Stop</button>
+            <button onClick={reset}>Reset</button>
         </div>
     )
 }
