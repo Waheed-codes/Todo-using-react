@@ -7,8 +7,7 @@ export default function StopWatch(){
     useEffect(()=>{
         if(!running) return;
          const interval= setInterval(()=> setSeconds((s)=> s+1),1000)
-         return ()=> clearInterval(interval)
-
+         return ()=> clearInterval(interval)  // cleanup function
     },[running])
     function reset(){
         setSeconds(0)
