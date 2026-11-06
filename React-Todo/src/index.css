@@ -1,4 +1,5 @@
 @import "tailwindcss";
-body{
-  background-color:oklch(84.5% 0.143 164.978);
+body {
+    margin: 0;
+    
 }
